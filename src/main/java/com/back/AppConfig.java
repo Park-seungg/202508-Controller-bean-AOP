@@ -12,7 +12,7 @@ public class AppConfig {
     }
 
     @Bean
-    PersonRepository personRepositoryV2() {
-        return new PersonRepository(2);
+    int version() {
+        return 3;
     }
 }
