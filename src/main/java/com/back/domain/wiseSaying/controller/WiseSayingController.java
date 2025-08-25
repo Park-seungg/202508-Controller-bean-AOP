@@ -18,7 +18,7 @@ public class WiseSayingController {
 
     @GetMapping("/wiseSayings/write")
     @ResponseBody
-    public String write(
+    public String save(
             @RequestParam(defaultValue = "내용") String content,
             @RequestParam(defaultValue = "작가") String author
     ) {
@@ -30,7 +30,7 @@ public class WiseSayingController {
             throw  new IllegalArgumentException("author is empty");
         }
 
-        WiseSaying wiseSaying = wiseSayingService.write(content, author);
+        WiseSaying wiseSaying = wiseSayingService.save(content, author);
 
         return "%d번 명언이 생성되었습니다.".formatted(wiseSaying.getId());
     }
@@ -39,7 +39,7 @@ public class WiseSayingController {
     @ResponseBody
     public String list() {
         return "<ul>"
-                + wiseSayingService.finadAll()
+                + wiseSayingService.findAll()
                 .stream()
                 .map(wiseSaying ->
                         "<li>%d / %s / %s </li>".formatted(wiseSaying.getId(), wiseSaying.getContent(), wiseSaying.getAuthor())
