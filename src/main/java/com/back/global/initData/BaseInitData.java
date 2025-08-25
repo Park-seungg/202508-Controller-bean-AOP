@@ -23,8 +23,6 @@ public class BaseInitData {
             wiseSayingService.save("""
                     - 하루 20분 독서가 인생을 바꾼다.
                     - 책은 마음의 양식이다.
-                    - 독서는 지혜의 열쇠이다.
-                    - 독서는 삶의 질을 높인다.
                     """, "작가 5");
         };
     }
